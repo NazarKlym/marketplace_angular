@@ -11,7 +11,7 @@ import {tap, Observable} from "rxjs";
 })
 export class AppComponent implements OnInit{
   title = 'angular market';
-  // products: IProduct[]= [];
+
   loading = false;
   products$: Observable<IProduct[]>
 
@@ -22,9 +22,5 @@ export class AppComponent implements OnInit{
 this.loading = true
     this.products$ = this.productsService.getAll().pipe(
       tap(()=>this.loading = false))
-//   this.productsService.getAll().subscribe(products=>{
-//   this.products = products
-// this.loading = false
-// })
   }
 }
